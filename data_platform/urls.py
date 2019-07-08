@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^term/(?P<term_id>\d+)$', views.get_term_detail.as_view(), name="term_detail"),
     url(r'^download/',views.get_download.as_view(), name="download"),
     url(r'^model_data/',views.get_model_data.as_view(), name="model_data"),
+    url(r'^fm_list/',views.get_fm_list.as_view(), name="fm_list"),
 ]

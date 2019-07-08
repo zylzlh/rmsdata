@@ -13,7 +13,7 @@ from data_platform.models import accident
 from term.models import term
 from data_platform.models import data_source
 from data_platform.models import data_address
-
+from type_data.models import fm
 
 class index_view(ListView):
 	template_name = "index.html"
@@ -72,3 +72,9 @@ class get_model_data(ListView):
 #        now = datetime.datetime.now()
 #        text={'hello':'Hello world!','name':'J','nowtime':now}
 #        return(text)
+
+
+class get_fm_list(LoginRequiredMixin,ListView):
+	model = fm
+	template_name = "fm_list.html"
+	content_object_name =  "fm_list"

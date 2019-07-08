@@ -1,0 +1,36 @@
+{% include "head.html" %}
+ 
+{% block title %} 
+Create an account 
+{% endblock %} 
+<style type="text/css">
+    body {
+      background-color: #DADADA;
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
+<div class="ui main container">
+    <h1 class="ui teal image header">
+        <div class="content">Create an account</div>
+    </h1>
+    <div class="ui stacked segment">
+        <div class="content">
+            <h3>Please, sign up using the following form：</h3> 
+            <form action="." method="post" novalidate> 
+                {{ user_form.as_p }} 
+                {% csrf_token %} 
+                <p><input type="submit" value="Register"></p> 
+            </form> 
+        </div>
+    </div>
+</div>
+
+        
