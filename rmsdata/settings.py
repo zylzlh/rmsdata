@@ -123,6 +123,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+#表示登录或注销后都是跳转到blog页面（即自己设置的首页的路由地址）-zyl
+#LOGIN_REDIRECT_URL="/data_platform/"
+LOGOUT_REDIRECT_URL="/data_platform/"
+#login_required URL（默认登录页面为/accounts/login/）
+LOGIN_URL = 'account:login'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/

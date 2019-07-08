@@ -1,0 +1,50 @@
+{% include "head.html" %}
+
+  <style type="text/css">
+    body {
+      background-color: #DADADA;
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
+
+<div class="ui middle aligned center aligned grid">
+     <div class="column">
+    <h1 class="ui teal image header">
+      <div class="content">
+        Log-in to your account
+      </div>
+    </h1>
+    <div class="ui stacked segment">
+          <div class="content">
+            {% if form.errors %} 
+            <h3>Your username and password didn't match. Please try again.</h3> 
+            {% else %} 
+            <h3>Please, use the following form to log-in:</h3> 
+            {% endif %}
+              <form action="." method="post"> 
+              {{ form.as_p }} 
+<!--
+              <div class="fieldWrapper">
+                {{ form.username.label_tag}}
+                {{form.username}}
+                  </div>
+                <div class="fieldWrapper">
+                {{ form.password.label_tag}}
+                {{form.password}}
+                  </div>
+-->
+              {% csrf_token %} 
+              <p><input type="submit" value="Log in"></p> 
+              </form>
+            </div>
+        </div>
+    </div>
+
