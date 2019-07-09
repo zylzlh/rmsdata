@@ -90,6 +90,7 @@
           <a class="item" href="fixed.php#">预留</a>
         </div>
       </div>
+        <a class="item" href="{% url 'data_platform:download' %}">下载</a>
      <div class="ui simple dropdown right item">
           {% if user.is_authenticated %}
           {{ user.username }}<i class="dropdown icon"></i>
